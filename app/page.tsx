@@ -33,6 +33,7 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Slider } from '@/components/ui/slider';
+import { StampTray } from '@/components/stamp-tray';
 import {
   Dialog,
   DialogContent,
@@ -723,8 +724,9 @@ export default function Home() {
     window.addEventListener('beforeunload', beforeUnload);
     const key = (e: KeyboardEvent) => {
       if (
+        e.defaultPrevented ||
         (e.target as HTMLElement).closest(
-          'input,textarea,[role=slider],[role=dialog]',
+          'input,textarea,[role=slider],[role=dialog],[role=combobox],[role=listbox]',
         ) ||
         busyRef.current
       )
@@ -1138,61 +1140,15 @@ export default function Home() {
               : 'かくしたい文字は、スタンプの内側におさめてね。'}
           </p>
         </section>
-        <aside className="stamp-tray" aria-label="スタンプと色">
-          <div className="tray-title">
-            <h2>スタンプ</h2>
-            <span>14こ</span>
-          </div>
-          <div className="palette-select" aria-label="パレット">
-            {PALETTES.map((p, i) => (
-              <Button
-                key={p.name}
-                variant="ghost"
-                className={palette === i ? 'palette-tab active' : 'palette-tab'}
-                aria-pressed={palette === i}
-                disabled={busy || exporting}
-                onClick={() => switchPalette(i)}
-              >
-                {p.name}
-              </Button>
-            ))}
-          </div>
-          <div className="color-swatches" aria-label="色">
-            {PALETTES[palette].colors.map((c, i) => (
-              <button
-                key={c}
-                className={c === color ? 'color-swatch active' : 'color-swatch'}
-                style={{ background: c }}
-                aria-label={PALETTES[palette].labels[i]}
-                aria-pressed={c === color}
-                disabled={busy || exporting}
-                onClick={() => void applyColor(c)}
-              />
-            ))}
-            <span className="color-hint">
-              {selected ? '選んだスタンプの色' : '次に置く色'}
-            </span>
-          </div>
-          <div className="sticker-grid">
-            {STAMPS.map((s) => (
-              <button
-                key={s.id}
-                className={`sticker-tile ${item?.stamp === s.id ? 'selected-type' : ''}`}
-                disabled={busy || exporting}
-                aria-label={`${s.name}を追加${s.decorative ? '（飾り用）' : ''}`}
-                onClick={() => void addStamp(s.id)}
-              >
-                <img
-                  src={stampAssetUrl(s.id, 'thumbs')}
-                  alt=""
-                  loading="lazy"
-                />
-                <span>{s.name}</span>
-              </button>
-            ))}
-          </div>
-          <p className="tray-hint">好きな形をタップして追加</p>
-        </aside>
+        <StampTray
+          palette={palette}
+          color={color}
+          selectedStamp={item?.stamp}
+          disabled={busy || exporting}
+          onPaletteChange={switchPalette}
+          onColorChange={(c) => void applyColor(c)}
+          onAddStamp={(id) => void addStamp(id)}
+        />
       </div>
       <p className="status-message" role="status" aria-live="polite">
         {busy && <LoaderCircle className="spin" size={15} />} {message}

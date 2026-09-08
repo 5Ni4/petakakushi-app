@@ -269,43 +269,133 @@ p {
   font-size: 13px;
   color: #77806e;
 }
-.palette-select {
-  display: flex;
+.stamp-tabs {
+  gap: 0;
+}
+.stamp-category-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  width: 100%;
+  height: auto;
+  padding: 4px;
   gap: 2px;
-  border-bottom: 1px solid #e5e5da;
-  padding-bottom: 7px;
+  background: #f2f3eb;
+  border-radius: 13px;
 }
-.palette-tab {
-  padding: 0 9px;
-  height: 35px;
-  font-size: 14px;
-  flex: 1;
+.stamp-category-tab {
+  min-width: 0;
+  min-height: 44px;
+  height: auto;
+  padding: 5px 2px;
   border-radius: 9px;
+  color: #66725f;
+  font-size: 14px;
+  white-space: normal;
 }
-.palette-tab.active {
-  background: #eaf0e7;
+.stamp-category-tab[data-active] {
+  background: #e3ebdc;
   color: #355a46;
   font-weight: 700;
+  box-shadow: none;
 }
-.color-swatches {
+.stamp-color-controls {
   display: flex;
-  gap: 14px;
-  padding: 20px 4px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 16px 0 18px;
 }
-.color-swatch {
-  height: 36px;
-  width: 36px;
+.stamp-color-choice {
+  flex: 1 1 130px;
+  min-width: 130px;
+}
+.stamp-palette-choice {
+  flex: 0 1 122px;
+  min-width: 110px;
+}
+.stamp-color-label {
+  display: block;
+  margin: 0 0 6px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #65705e;
+}
+.stamp-swatches {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 4px;
+}
+.stamp-swatch {
+  width: 100%;
+  min-width: 0;
+  height: 44px;
+  padding: 6px 4px;
+  border: 0;
+  background: transparent;
+  border-radius: 12px;
+}
+.stamp-swatch > span {
+  display: block;
+  width: 100%;
+  max-width: 36px;
+  height: 32px;
+  margin: 0 auto;
   border: 1px solid #0000000e;
-  border-radius: 13px;
-  position: relative;
-  flex-shrink: 0;
+  border-radius: 11px;
 }
-.color-swatch.active:after {
-  content: '';
-  position: absolute;
-  inset: -5px;
-  border: 2px solid #3f604d;
-  border-radius: 17px;
+.stamp-swatch.active > span {
+  box-shadow:
+    0 0 0 2px #fffefb,
+    0 0 0 4px #3f604d;
+}
+.stamp-swatch:focus-visible {
+  outline: 2px solid #3f604d;
+  outline-offset: 2px;
+}
+.stamp-swatch:disabled {
+  opacity: 0.65;
+}
+.stamp-palette-trigger {
+  width: 100%;
+  min-height: 44px;
+  height: auto;
+  padding: 8px;
+  border-color: #d6dccd;
+  background: #fffefb;
+  border-radius: 11px;
+  font-size: 14px;
+}
+.stamp-palette-menu {
+  width: 220px;
+  max-width: calc(100vw - 24px);
+  padding: 5px;
+  background: #fffefb;
+  color: #355a46;
+  border-radius: 13px;
+}
+.stamp-palette-option {
+  min-height: 44px;
+  padding-left: 9px;
+  font-size: 14px;
+}
+.stamp-palette-option[data-highlighted] {
+  background: #eaf0e7;
+}
+.palette-option-colors {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-right: 4px;
+}
+.palette-option-colors > span {
+  display: block;
+  width: 10px;
+  height: 16px;
+  border: 1px solid #0000000e;
+  border-radius: 4px;
+}
+.stamp-category-content {
+  min-width: 0;
 }
 .sticker-grid {
   display: grid;
@@ -365,9 +455,6 @@ p {
   }
   .stamp-tray {
     padding: 18px 13px;
-  }
-  .palette-tab {
-    padding: 0 5px;
   }
   .sticker-tile img {
     width: 67px;
@@ -464,9 +551,6 @@ p {
   .tray-title h2 {
     font-size: 17px;
   }
-  .palette-tab {
-    font-size: 14px;
-  }
   .sticker-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 8px;
@@ -474,18 +558,6 @@ p {
   .sticker-tile img {
     width: 66px;
     height: 47px;
-  }
-  .color-swatches {
-    padding: 16px 4px;
-    gap: 17px;
-  }
-  .color-swatch {
-    height: 33px;
-    width: 33px;
-    border-radius: 12px;
-  }
-  .color-swatch.active:after {
-    border-radius: 16px;
   }
   .tray-hint {
     margin-top: 12px;
@@ -665,21 +737,6 @@ p {
   background: #eff2df;
   border-color: #c5ceb5;
 }
-.color-hint {
-  font-size: 12px;
-  line-height: 1.5;
-  color: #6a7663;
-  max-width: 73px;
-  margin-left: auto;
-}
-.color-swatches {
-  align-items: center;
-  gap: 13px;
-}
-.color-swatch {
-  width: 34px;
-  height: 34px;
-}
 .status-message {
   display: flex;
   align-items: center;
@@ -837,9 +894,6 @@ p {
   position: sticky;
   top: 18px;
 }
-.color-swatch:disabled {
-  opacity: 0.65;
-}
 .sticker-tile:disabled {
   opacity: 0.65;
   transform: none;
@@ -878,14 +932,6 @@ p {
     height: 30px;
     right: -13px;
     bottom: -13px;
-  }
-  .color-hint {
-    max-width: none;
-    margin-left: auto;
-    font-size: 12px;
-  }
-  .color-swatches {
-    gap: 17px;
   }
   .export-dialog {
     padding: 16px;
@@ -929,12 +975,6 @@ p {
   }
   .sticker-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-  .color-swatches {
-    gap: 12px;
-  }
-  .color-hint {
-    max-width: 84px;
   }
   .view-controls > span {
     max-width: 90px;
