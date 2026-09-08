@@ -1,12 +1,24 @@
 import fs from 'node:fs/promises';
 import sharp from 'sharp';
-import { STAMPS, createStampSvg } from '../lib/stamps.ts';
+import { STAMPS, PALETTES, createStampSvg } from '../lib/stamps.ts';
 await fs.mkdir('public/thumbs', { recursive: true });
 for (const spec of STAMPS) {
   const source = await fs.readFile(`public/stamps/${spec.id}.svg`, 'utf8');
   const color = source.match(/<svg[^>]*\bcolor="(#[a-f0-9]{6})"/i)![1];
   const { svg } = createStampSvg(source, spec.id, color, 0, 240);
   await sharp(Buffer.from(svg)).png().toFile(`public/thumbs/${spec.id}.png`);
+  for (const [palette, p] of PALETTES.entries()) {
+    await Promise.all(
+      p.colors.map(async (color, colorIndex) => {
+        const directory = `public/thumbs/palettes/${palette}-${colorIndex}`;
+        await fs.mkdir(directory, { recursive: true });
+        const preview = createStampSvg(source, spec.id, color, palette, 240);
+        await sharp(Buffer.from(preview.svg))
+          .png()
+          .toFile(`${directory}/${spec.id}.png`);
+      }),
+    );
+  }
 }
 await sharp('public/thumbs/524-silhouette.png')
   .resize(180, 180, {
@@ -15,4 +27,6 @@ await sharp('public/thumbs/524-silhouette.png')
   })
   .png()
   .toFile('public/favicon.png');
-console.log('Prepared 14 lightweight thumbnails and favicon.');
+console.log(
+  `Prepared ${STAMPS.length} original thumbnails, ${STAMPS.length * PALETTES.reduce((n, p) => n + p.colors.length, 0)} palette previews and favicon.`,
+);

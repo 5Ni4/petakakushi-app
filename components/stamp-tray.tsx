@@ -9,7 +9,8 @@ import {
   SelectContent,
   SelectItem,
 } from '@/components/ui/select';
-import { STAMPS, PALETTES, stampAssetUrl, type StampId } from '@/lib/stamps';
+import { STAMPS, PALETTES, type StampId } from '@/lib/stamps';
+import { StampThumbnail } from '@/components/stamp-thumbnail';
 
 const categories = [
   { id: 'all', name: 'すべて', stamps: STAMPS },
@@ -156,11 +157,7 @@ export function StampTray({
                   aria-label={`${s.name}を追加${s.decorative ? '（飾り用）' : ''}`}
                   onClick={() => onAddStamp(s.id)}
                 >
-                  <img
-                    src={stampAssetUrl(s.id, 'thumbs')}
-                    alt=""
-                    loading="lazy"
-                  />
+                  <StampThumbnail id={s.id} color={color} palette={palette} />
                   <span>{s.name}</span>
                 </button>
               ))}

@@ -129,6 +129,14 @@ export function stampAssetUrl(id: StampId, kind: 'stamps' | 'thumbs') {
   const revision = ASSET_REVISIONS[id];
   return `/${kind}/${id}.${kind === 'stamps' ? 'svg' : 'png'}${revision ? `?v=${revision}` : ''}`;
 }
+export function stampPreviewUrl(id: StampId, color: string, palette: number) {
+  const colorIndex = PALETTES[palette]?.colors.findIndex(
+    (c) => c.toLowerCase() === color.toLowerCase(),
+  );
+  if (colorIndex === undefined || colorIndex < 0) return null;
+  // Bump the preview version after palette changes; artwork revisions are separate.
+  return `/thumbs/palettes/${palette}-${colorIndex}/${id}.png?v=1.4.0-${ASSET_REVISIONS[id] ?? '1.0.0'}`;
+}
 export function createStampSvg(
   source: string,
   id: StampId,

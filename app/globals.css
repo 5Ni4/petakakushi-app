@@ -421,7 +421,8 @@ p {
   background: #f1efdd;
   transform: translateY(-2px);
 }
-.sticker-tile img {
+.sticker-tile img,
+.sticker-tile .stamp-thumbnail-placeholder {
   width: 80px;
   height: 51px;
   object-fit: contain;
@@ -456,7 +457,8 @@ p {
   .stamp-tray {
     padding: 18px 13px;
   }
-  .sticker-tile img {
+  .sticker-tile img,
+  .sticker-tile .stamp-thumbnail-placeholder {
     width: 67px;
   }
 }
@@ -555,7 +557,8 @@ p {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 8px;
   }
-  .sticker-tile img {
+  .sticker-tile img,
+  .sticker-tile .stamp-thumbnail-placeholder {
     width: 66px;
     height: 47px;
   }
@@ -1001,4 +1004,12 @@ p {
 }
 .tray-hint {
   font-size: 13px;
+}
+
+.sticker-tile .stamp-thumbnail-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+  color: #77806e;
 }
