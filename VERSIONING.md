@@ -18,15 +18,15 @@
 
 ## 公開版の対応
 
-後続版の対応表は `releases/v<版番号>.json` に保存する。現在の公開版ver1.3.2は次のとおり。
+後続版の対応表は `releases/v<版番号>.json` に保存する。現在の公開版ver1.4は次のとおり。
 
-- Gitタグ: `v1.3.2`
-- 公開ソース: `c3a2564e5513e102f657e759496617da7bc03b99`
-- Sites保存版: `6`
-- Version ID: `appgprj_6a9f868ff5c08191b89670c11f8895e9~appgver_5145e8e7a50881918efe557efb843219`
-- Deployment ID: `appgdep_6a9face7a3b081919ad2972361039251`（成功）
-- 詳細: [ver1.3.2の記録](releases/v1.3.2.json)
-- 過去の版: [ver1.3.1の記録](releases/v1.3.1.json)、 [ver1.3の記録](releases/v1.3.0.json)、 [ver1.2の記録](releases/v1.2.0.json)、 [ver1.1の記録](releases/v1.1.0.json)
+- Gitタグ: `v1.4.0`
+- 公開ソース: `81428131c941a454a1b9370daaf623b8923f385e`
+- Sites保存版: `7`
+- Version ID: `appgprj_6a9f868ff5c08191b89670c11f8895e9~appgver_0e264b453e2081918d4f02348c1e845e`
+- Deployment ID: `appgdep_6a9fb213a6f881918a299b6cd82256ea`（成功）
+- 詳細: [ver1.4の記録](releases/v1.4.0.json)
+- 過去の版: [ver1.3.2の記録](releases/v1.3.2.json)、 [ver1.3.1の記録](releases/v1.3.1.json)、 [ver1.3の記録](releases/v1.3.0.json)、 [ver1.2の記録](releases/v1.2.0.json)、 [ver1.1の記録](releases/v1.1.0.json)
 
 ### 保存済みver1.0
 

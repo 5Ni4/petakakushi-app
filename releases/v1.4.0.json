@@ -1,0 +1,69 @@
+{
+  "product": "ぺたかくし",
+  "display_version": "ver1.4",
+  "version": "1.4.0",
+  "git_tag": "v1.4.0",
+  "source_commit": "81428131c941a454a1b9370daaf623b8923f385e",
+  "package_manifest_version": "1.4.0",
+  "recorded_at_utc": "2026-09-08T06:59:51.247Z",
+  "site": {
+    "project_id": "appgprj_6a9f868ff5c08191b89670c11f8895e9",
+    "saved_version_number": 7,
+    "saved_version_id": "appgprj_6a9f868ff5c08191b89670c11f8895e9~appgver_0e264b453e2081918d4f02348c1e845e",
+    "deployment_id": "appgdep_6a9fb213a6f881918a299b6cd82256ea",
+    "deployment_status": "succeeded",
+    "url": "https://petakakushi-524.r5ni4.chatgpt.site",
+    "access": "owner-only",
+    "access_policy_revision": 1,
+    "saved_archive_content_hash": "sha256:d4621057c31693e74199cbed9149f80c87c0e5fdc123dc7f3a1915e9e1970246"
+  },
+  "validation": {
+    "build": "passed",
+    "typecheck": "passed",
+    "automated_tests": {
+      "passed": 10,
+      "failed": 0,
+      "scope": "existing editor tests"
+    },
+    "palette_previews": {
+      "files_checked": 224,
+      "total_bytes": 4230535,
+      "pixel_matches_checked": 32,
+      "checks": "all dimensions and URLs,16 distinct colors per stamp,case-insensitive matching,custom and cross-palette fallback conditions"
+    },
+    "asset_visual_review": "representative pink and monochrome thumbnails inspected",
+    "independent_review": "passed: keyed custom renderer,abort and Blob URL cleanup,palette fidelity,placement unaffected",
+    "local_http": "200 for page and palette PNG",
+    "iphone_real_device": "not tested",
+    "browser_ui_qa": "not performed",
+    "webmcp_custom_preview_browser": "not tested in browser"
+  },
+  "runtime": {
+    "node": ">=22.13.0",
+    "dependency_install": "npm ci",
+    "lockfile": "package-lock.json"
+  },
+  "immutable_release": true,
+  "files": {
+    "source.tar.gz": {
+      "sha256": "9b7f9b2c16891e2650187e95d8dc0ef61038239a8a01cb7cf56f26234b81f77d",
+      "bytes": 5691839
+    },
+    "source.bundle": {
+      "sha256": "f777e09bec89e4dcb0ae1767cc4db2a68a4973f62cad76e4033faab90c91039c",
+      "bytes": 5657529
+    },
+    "deployment.tar.gz": {
+      "sha256": "acd6c6796fb5db56b354c20c656afa16d89238066828b36a4ec4b7757d1626ab",
+      "bytes": 6267713
+    },
+    "CHANGELOG.md": {
+      "sha256": "e08701216ddb2a44551923423c04c1cb4b82e81efb77c42f596254b1f8042c63",
+      "bytes": 7832
+    },
+    "RESTORE.md": {
+      "sha256": "c0612a14ec790595ce650b4ccbaf8369f49f27f97243ee410dd943b4da36f472",
+      "bytes": 2259
+    }
+  }
+}
