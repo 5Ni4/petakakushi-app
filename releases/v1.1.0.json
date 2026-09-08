@@ -1,0 +1,63 @@
+{
+  "product": "ぺたかくし",
+  "display_version": "ver1.1",
+  "version": "1.1.0",
+  "git_tag": "v1.1.0",
+  "source_commit": "bfc1e4e85a1d7b2b5dd733717ff18d0b282d9441",
+  "package_manifest_version": "1.1.0",
+  "recorded_at_utc": "2026-09-08T05:39:19.323Z",
+  "site": {
+    "project_id": "appgprj_6a9f868ff5c08191b89670c11f8895e9",
+    "saved_version_number": 2,
+    "saved_version_id": "appgprj_6a9f868ff5c08191b89670c11f8895e9~appgver_9b9f5124b1a48191ba3b549d7b8adad8",
+    "deployment_id": "appgdep_6a9f9f2a6f948191afa2c8c9ecf68a22",
+    "deployment_status": "succeeded",
+    "url": "https://petakakushi-524.r5ni4.chatgpt.site",
+    "access": "owner-only",
+    "access_policy_revision": 1,
+    "saved_archive_content_hash": "sha256:f11889351a11a29cd96ad3c338ed50f94fd702c64a6b64aa6ce0427ba7cfa59a"
+  },
+  "validation": {
+    "build": "passed",
+    "typecheck": "passed",
+    "automated_tests": {
+      "passed": 10,
+      "failed": 0,
+      "scope": "layer step order, boundaries, history, dimensions, asset rasterization and opaque mask interiors"
+    },
+    "independent_code_review": "passed",
+    "local_http": "200",
+    "export_order": "source review: canvas and PNG use the same back-to-front array",
+    "iphone_real_device": "not tested",
+    "browser_ui_qa": "not performed",
+    "webmcp": "not verified in supported context"
+  },
+  "runtime": {
+    "node": ">=22.13.0",
+    "dependency_install": "npm ci",
+    "lockfile": "package-lock.json"
+  },
+  "immutable_release": true,
+  "files": {
+    "source.tar.gz": {
+      "sha256": "5f780b02df85b3922a2fb05caf92db9ca740d8b23de949076e083577b1f327b4",
+      "bytes": 1451019
+    },
+    "source.bundle": {
+      "sha256": "6c7c35ffaac1059504fc14233bfbcd0acaf7c4ab4570cf3e0eb04a117a041931",
+      "bytes": 1658950
+    },
+    "deployment.tar.gz": {
+      "sha256": "3c720b584ff1210b3bcfb52c9eb6b6c5a5815a178d0c976b85f1df091bbc6692",
+      "bytes": 1992193
+    },
+    "CHANGELOG.md": {
+      "sha256": "44b4a1a4cb82da13d464d1dede614a8e2608837fd2b7a233fe55d88fdad77bc2",
+      "bytes": 2711
+    },
+    "RESTORE.md": {
+      "sha256": "1d4a6516d9596f5339ca4b0ef4751923ad788ca65b8e504eaa0f205c11e842b8",
+      "bytes": 2002
+    }
+  }
+}

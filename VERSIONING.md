@@ -16,7 +16,18 @@
 4. `../releases/petakakushi-v<版番号>/` にソース、Git bundle、公開データ、復元手順、SHA-256を保存する。
 5. 既存版のタグや保存物を更新しない。修正は新しい版として残す。
 
-## 初版の対応
+## 公開版の対応
+
+後続版の対応表は `releases/v<版番号>.json` に保存する。現在の公開版ver1.1は次のとおり。
+
+- Gitタグ: `v1.1.0`
+- 公開ソース: `bfc1e4e85a1d7b2b5dd733717ff18d0b282d9441`
+- Sites保存版: `2`
+- Version ID: `appgprj_6a9f868ff5c08191b89670c11f8895e9~appgver_9b9f5124b1a48191ba3b549d7b8adad8`
+- Deployment ID: `appgdep_6a9f9f2a6f948191afa2c8c9ecf68a22`（成功）
+- 詳細: [ver1.1の記録](releases/v1.1.0.json)
+
+### 保存済みver1.0
 
 - 製品版: `1.0.0`（表示名 `ver1.0`）
 - Gitタグ: `v1.0.0`
