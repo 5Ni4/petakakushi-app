@@ -1,0 +1,58 @@
+{
+  "product": "ぺたかくし",
+  "display_version": "ver1.3.1",
+  "version": "1.3.1",
+  "git_tag": "v1.3.1",
+  "source_commit": "b38b0f0738101c8e5844e6e5ecc8ac988e9ac01e",
+  "package_manifest_version": "1.3.1",
+  "recorded_at_utc": "2026-09-08T06:32:57.281Z",
+  "site": {
+    "project_id": "appgprj_6a9f868ff5c08191b89670c11f8895e9",
+    "saved_version_number": 5,
+    "saved_version_id": "appgprj_6a9f868ff5c08191b89670c11f8895e9~appgver_501fc7acc20c8191b1b8e41ef891f90c",
+    "deployment_id": "appgdep_6a9fabd0311c8191a86885f7e2810876",
+    "deployment_status": "succeeded",
+    "url": "https://petakakushi-524.r5ni4.chatgpt.site",
+    "access": "owner-only",
+    "access_policy_revision": 1,
+    "saved_archive_content_hash": "sha256:853c94b4db86926658cb3b8e6ecace02042f801f3a0a798f2f25c518e2728873"
+  },
+  "validation": {
+    "build": "passed",
+    "typecheck": "passed",
+    "independent_review": "passed: order all/lines/illustrations/arrows; counts14/4/6/4; all 14 classified without omissions or overlaps",
+    "automated_tests": "not rerun for category-only change; prior v1.3.0 suite passed 10 tests",
+    "local_http": "200",
+    "iphone_real_device": "not tested",
+    "browser_ui_qa": "not performed",
+    "webmcp": "not verified in supported context"
+  },
+  "runtime": {
+    "node": ">=22.13.0",
+    "dependency_install": "npm ci",
+    "lockfile": "package-lock.json"
+  },
+  "immutable_release": true,
+  "files": {
+    "source.tar.gz": {
+      "sha256": "5a4a3d36073cab1b682b4a35ddfc0b46362084ec5ca19618fff5cdded34d583d",
+      "bytes": 1463725
+    },
+    "source.bundle": {
+      "sha256": "dba18112a5e6163f15e8762fa38ccf9d5af1b0a9dbfad3fe88497a018206a2b6",
+      "bytes": 1692842
+    },
+    "deployment.tar.gz": {
+      "sha256": "f4a5deca1e09ad1fea61af99b6228e700852f533bdb9582225b34f3ef2b4a733",
+      "bytes": 2030008
+    },
+    "CHANGELOG.md": {
+      "sha256": "85a8267a10d5b25d4a8253c57dc6656e711b5f73c05fd4e889d753b7365cf687",
+      "bytes": 5864
+    },
+    "RESTORE.md": {
+      "sha256": "6373e46ad0d244e245b3a7164ab6c0a02aeeedf67d9cbab1089b3421ef50d6ec",
+      "bytes": 2046
+    }
+  }
+}
