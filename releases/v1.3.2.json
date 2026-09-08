@@ -1,0 +1,58 @@
+{
+  "product": "ぺたかくし",
+  "display_version": "ver1.3.2",
+  "version": "1.3.2",
+  "git_tag": "v1.3.2",
+  "source_commit": "c3a2564e5513e102f657e759496617da7bc03b99",
+  "package_manifest_version": "1.3.2",
+  "recorded_at_utc": "2026-09-08T06:37:35.091Z",
+  "site": {
+    "project_id": "appgprj_6a9f868ff5c08191b89670c11f8895e9",
+    "saved_version_number": 6,
+    "saved_version_id": "appgprj_6a9f868ff5c08191b89670c11f8895e9~appgver_5145e8e7a50881918efe557efb843219",
+    "deployment_id": "appgdep_6a9face7a3b081919ad2972361039251",
+    "deployment_status": "succeeded",
+    "url": "https://petakakushi-524.r5ni4.chatgpt.site",
+    "access": "owner-only",
+    "access_policy_revision": 1,
+    "saved_archive_content_hash": "sha256:b675fbf3108aad9a0b710b3c55036fc8290fc1a4928f7f5239307a1987edc464"
+  },
+  "validation": {
+    "build": "passed",
+    "typecheck": "passed",
+    "independent_review": "passed: order all/lines/arrows/illustrations; category memberships unchanged",
+    "automated_tests": "not rerun for tab-order-only change",
+    "local_http": "200",
+    "iphone_real_device": "not tested",
+    "browser_ui_qa": "not performed",
+    "webmcp": "not verified in supported context"
+  },
+  "runtime": {
+    "node": ">=22.13.0",
+    "dependency_install": "npm ci",
+    "lockfile": "package-lock.json"
+  },
+  "immutable_release": true,
+  "files": {
+    "source.tar.gz": {
+      "sha256": "8a037d38ece32bb89b84d335cd6a7ee85b424083da336f1b3be37d1877ef70be",
+      "bytes": 1464399
+    },
+    "source.bundle": {
+      "sha256": "6a539cb2ae4f2fed269da596e8f5b3e7fc2890a6c7c6501574a5af4eb8e304ef",
+      "bytes": 1693744
+    },
+    "deployment.tar.gz": {
+      "sha256": "8a8be61deae438d10e47f54ae520929f6bbad9356425c43299894bcd8a234da5",
+      "bytes": 2029982
+    },
+    "CHANGELOG.md": {
+      "sha256": "78a045622a50ac7e6f5549b84c548e60f5e720ccd48b4ea17e9584598442dcd1",
+      "bytes": 6359
+    },
+    "RESTORE.md": {
+      "sha256": "0a4abe1bfaff2a49a695d420ea908137f0050899c3acbf070f1b4b49cd26ddff",
+      "bytes": 2046
+    }
+  }
+}
