@@ -13,11 +13,19 @@ import { STAMPS, PALETTES, stampAssetUrl, type StampId } from '@/lib/stamps';
 
 const categories = [
   { id: 'all', name: 'すべて', stamps: STAMPS },
-  { id: 'masks', name: 'かくす', stamps: STAMPS.filter((s) => !s.decorative) },
   {
     id: 'lines',
     name: 'ライン',
-    stamps: STAMPS.filter((s) => s.id === 'wave' || s.id === 'diagonal-lines'),
+    stamps: STAMPS.filter((s) =>
+      ['crayon-band', 'oval', 'wave', 'diagonal-lines'].includes(s.id),
+    ),
+  },
+  {
+    id: 'illustrations',
+    name: 'イラスト',
+    stamps: STAMPS.filter(
+      (s) => !s.decorative && s.id !== 'crayon-band' && s.id !== 'oval',
+    ),
   },
   {
     id: 'arrows',
