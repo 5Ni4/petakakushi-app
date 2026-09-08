@@ -1,0 +1,64 @@
+{
+  "product": "ぺたかくし",
+  "display_version": "ver1.2",
+  "version": "1.2.0",
+  "git_tag": "v1.2.0",
+  "source_commit": "17760becb05a23c75494f0d967d421c6ae0e3677",
+  "package_manifest_version": "1.2.0",
+  "recorded_at_utc": "2026-09-08T06:10:54.477Z",
+  "site": {
+    "project_id": "appgprj_6a9f868ff5c08191b89670c11f8895e9",
+    "saved_version_number": 3,
+    "saved_version_id": "appgprj_6a9f868ff5c08191b89670c11f8895e9~appgver_d86bd2007dd08191bf0cd5fa04b91f61",
+    "deployment_id": "appgdep_6a9fa6adf23881919a77e2ac62b29ed2",
+    "deployment_status": "succeeded",
+    "url": "https://petakakushi-524.r5ni4.chatgpt.site",
+    "access": "owner-only",
+    "access_policy_revision": 1,
+    "saved_archive_content_hash": "sha256:6fd9e2aaeb0514e5574af06f96dc36cc262df09bf95e13b212dad08d67c8f2c6"
+  },
+  "validation": {
+    "build": "passed",
+    "typecheck": "passed",
+    "automated_tests": {
+      "passed": 10,
+      "failed": 0,
+      "scope": "existing layer/history/dimensions/rasterization/opacity checks"
+    },
+    "asset_checks": "passed: both matching paths, single continuous subpath, doubled wave arches, all four palettes, crop padding, opaque connector interiors",
+    "asset_visual_review": "updated PNG thumbnails inspected",
+    "independent_review": "geometry-only SVG diff and asset URL routing approved",
+    "local_http": "200",
+    "iphone_real_device": "not tested",
+    "browser_ui_qa": "not performed",
+    "webmcp": "not verified in supported context"
+  },
+  "runtime": {
+    "node": ">=22.13.0",
+    "dependency_install": "npm ci",
+    "lockfile": "package-lock.json"
+  },
+  "immutable_release": true,
+  "files": {
+    "source.tar.gz": {
+      "sha256": "5333e9d517c917a0ed36b86ecab4ebd615701dd6594ba8936841bc9c5e47cd1d",
+      "bytes": 1460609
+    },
+    "source.bundle": {
+      "sha256": "19e75cca38641ae60d3d34a8710c6d655a6b16af7c80d1e5417a909091dab314",
+      "bytes": 1699471
+    },
+    "deployment.tar.gz": {
+      "sha256": "1b6247eb01f852b2dfdf067d5e54ca43669d339653cc8e38972be7f193d97789",
+      "bytes": 2002086
+    },
+    "CHANGELOG.md": {
+      "sha256": "c57bad9a160e602dc82aaef9d5101ce402b97e4e39ccccf5164c20d7069cf5e0",
+      "bytes": 3913
+    },
+    "RESTORE.md": {
+      "sha256": "56a6cc9f0e32a16bde1592483fd8863cb59a2ac21b8a3671a10063e65e4029b8",
+      "bytes": 2171
+    }
+  }
+}
