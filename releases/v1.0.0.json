@@ -1,0 +1,61 @@
+{
+  "product": "ぺたかくし",
+  "display_version": "ver1.0",
+  "version": "1.0.0",
+  "git_tag": "v1.0.0",
+  "source_commit": "0fd24e513207195f298bf259ca208aa44b2e81aa",
+  "package_manifest_version": "0.1.0",
+  "package_version_note": "Initial scaffold metadata; product release version is defined by this manifest and Git tag.",
+  "recorded_at_utc": "2026-09-08 05:18:44 UTC",
+  "site": {
+    "project_id": "appgprj_6a9f868ff5c08191b89670c11f8895e9",
+    "saved_version_number": 1,
+    "saved_version_id": "appgprj_6a9f868ff5c08191b89670c11f8895e9~appgver_945caad962c88191930f9904e552d980",
+    "deployment_id": "appgdep_6a9f8c4f41208191ac64e1fc182782a6",
+    "deployment_status": "succeeded",
+    "url": "https://petakakushi-524.r5ni4.chatgpt.site",
+    "access": "owner-only",
+    "access_policy_revision": 1,
+    "saved_archive_content_hash": "sha256:ef6548cb713037bf032a1bc8658bb1055861b7d86dead403d2ee2509cd2e2a4a"
+  },
+  "validation": {
+    "build": "passed when implemented",
+    "typecheck": "passed when implemented",
+    "automated_tests": {
+      "passed": 7,
+      "failed": 0,
+      "scope": "history, dimensions, asset rasterization, opaque mask interiors"
+    },
+    "iphone_real_device": "not tested",
+    "browser_ui_qa": "not performed by agent; user reviewed current site",
+    "webmcp": "not verified in supported context"
+  },
+  "runtime": {
+    "node": ">=22.13.0",
+    "dependency_install": "npm ci",
+    "lockfile": "package-lock.json"
+  },
+  "immutable_baseline": true,
+  "files": {
+    "source.tar.gz": {
+      "sha256": "9b5fae8a3348780a496e90d72c063c76758b726da65c22c458a08df8de49f6a0",
+      "bytes": 1445297
+    },
+    "source.bundle": {
+      "sha256": "20d9f531c664421752725d7fdee89ace2b57f7fcded65131b71d364073b1df97",
+      "bytes": 1651716
+    },
+    "deployment.tar.gz": {
+      "sha256": "681b0648c28c6cf1b6527279e953335d7df92814e0ffae7a1cc4557b516e55c6",
+      "bytes": 1996768
+    },
+    "CHANGELOG.md": {
+      "sha256": "4067195ac1ecc1fb767ae4f6af7b2c19c1c8619ff7fe13a7318f5daf5839fcb0",
+      "bytes": 1465
+    },
+    "RESTORE.md": {
+      "sha256": "8f7c886c2747168534b332e0de3be0d89d4a4d53d66516e00fd3c9c48756605b",
+      "bytes": 2213
+    }
+  }
+}
