@@ -822,30 +822,54 @@ p {
 }
 .export-intro {
   border-top: 1px solid #e7e8de;
-  padding-top: 4px;
+  padding-top: 12px;
   text-align: center;
 }
-.x-intro-link {
-  display: inline-flex;
+.app-footer {
+  display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5px;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin-top: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+.x-intro-button {
   min-height: 44px;
-  padding: 4px 8px;
-  border-radius: 8px;
+  height: auto;
+  max-width: 100%;
+  padding: 10px 14px;
+  border-radius: 12px;
+  color: #435f4d;
+  font-size: 14px;
+  line-height: 1.5;
+  white-space: normal;
+  text-align: center;
+  text-decoration: none;
+}
+.x-intro-button:focus-visible {
+  outline: 2px solid #3f604d;
+  outline-offset: 2px;
+}
+.author-x-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  max-width: 100%;
+  padding: 8px 4px;
+  border-radius: 6px;
   color: #65705e;
   font-size: 14px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
   text-decoration: underline;
   text-decoration-color: #bcc6b4;
   text-underline-offset: 4px;
 }
-.x-intro-link:hover {
+.author-x-link:hover {
   color: #314a39;
   text-decoration-color: currentColor;
-}
-.x-intro-link:focus-visible {
-  outline: 2px solid #3f604d;
-  outline-offset: 2px;
 }
 .layers-dialog {
   width: min(430px, calc(100vw - 28px));

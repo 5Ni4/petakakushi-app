@@ -1,4 +1,6 @@
 export const SITE_URL = 'https://petakakushi-524.r5ni4.chatgpt.site/';
+export const AUTHOR_X_HANDLE = 'R5ni4';
+export const AUTHOR_X_URL = `https://x.com/${AUTHOR_X_HANDLE}`;
 
 export const X_SHARE_TEXT =
   'スクショの隠したいところに、クレヨンスタンプをぺたり。\nかわいく隠せる「ぺたかくし」';

@@ -24,7 +24,6 @@ import {
   ArrowDownToLine,
   ArrowUp,
   ArrowDown,
-  ArrowUpRight,
   Layers,
   RotateCw,
   Share2,
@@ -75,7 +74,8 @@ import {
   type StampBitmap,
 } from '@/lib/image-editor';
 import { registerEditorTools } from '@/lib/webmcp';
-import { X_SHARE_URL } from '@/lib/share';
+import { XIntroButton } from '@/components/x-intro-button';
+import { AUTHOR_X_HANDLE, AUTHOR_X_URL } from '@/lib/share';
 
 type Photo = {
   url: string;
@@ -1155,6 +1155,18 @@ export default function Home() {
       <p className="status-message" role="status" aria-live="polite">
         {busy && <LoaderCircle className="spin" size={15} />} {message}
       </p>
+      <footer className="app-footer">
+        <XIntroButton />
+        <a
+          className="author-x-link"
+          href={AUTHOR_X_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`作者のX：@${AUTHOR_X_HANDLE}（別タブで開く）`}
+        >
+          作者のX：@{AUTHOR_X_HANDLE}
+        </a>
+      </footer>
       <Dialog
         open={Boolean(saved)}
         onOpenChange={(open) => {
@@ -1210,16 +1222,7 @@ export default function Home() {
                 iPhoneは「共有・保存」から「画像を保存」。表示されないときは、上の画像を長押しして保存できます。
               </p>
               <div className="export-intro">
-                <a
-                  className="x-intro-link"
-                  href={X_SHARE_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="ぺたかくしをXで紹介（別タブで開く）"
-                >
-                  ぺたかくしをXで紹介
-                  <ArrowUpRight size={15} aria-hidden="true" />
-                </a>
+                <XIntroButton />
               </div>
             </>
           )}
