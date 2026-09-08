@@ -18,15 +18,15 @@
 
 ## 公開版の対応
 
-後続版の対応表は `releases/v<版番号>.json` に保存する。現在の公開版ver1.2は次のとおり。
+後続版の対応表は `releases/v<版番号>.json` に保存する。現在の公開版ver1.3は次のとおり。
 
-- Gitタグ: `v1.2.0`
-- 公開ソース: `17760becb05a23c75494f0d967d421c6ae0e3677`
-- Sites保存版: `3`
-- Version ID: `appgprj_6a9f868ff5c08191b89670c11f8895e9~appgver_d86bd2007dd08191bf0cd5fa04b91f61`
-- Deployment ID: `appgdep_6a9fa6adf23881919a77e2ac62b29ed2`（成功）
-- 詳細: [ver1.2の記録](releases/v1.2.0.json)
-- 過去の版: [ver1.1の記録](releases/v1.1.0.json)
+- Gitタグ: `v1.3.0`
+- 公開ソース: `9c4c37fc7e3658dc02b95009cece816c8952a7ab`
+- Sites保存版: `4`
+- Version ID: `appgprj_6a9f868ff5c08191b89670c11f8895e9~appgver_51b6624ddf0081919cba2c45136e237a`
+- Deployment ID: `appgdep_6a9faa3b8f108191ba26547a5c19c82a`（成功）
+- 詳細: [ver1.3の記録](releases/v1.3.0.json)
+- 過去の版: [ver1.2の記録](releases/v1.2.0.json)、 [ver1.1の記録](releases/v1.1.0.json)
 
 ### 保存済みver1.0
 
