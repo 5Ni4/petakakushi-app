@@ -1,0 +1,59 @@
+{
+  "product": "ぺたかくし",
+  "display_version": "ver1.5",
+  "version": "1.5.0",
+  "git_tag": "v1.5.0",
+  "source_commit": "aafdcc83e4c841adc7c6c4a6dd2fa4b063f89b78",
+  "package_manifest_version": "1.5.0",
+  "recorded_at_utc": "2026-09-08T07:25:58.536Z",
+  "site": {
+    "project_id": "appgprj_6a9f868ff5c08191b89670c11f8895e9",
+    "saved_version_number": 8,
+    "saved_version_id": "appgprj_6a9f868ff5c08191b89670c11f8895e9~appgver_9116eadd95088191841e2a524d83661a",
+    "deployment_id": "appgdep_6a9fb837fad481918cb02dd82c3d43aa",
+    "deployment_status": "succeeded",
+    "url": "https://petakakushi-524.r5ni4.chatgpt.site",
+    "access": "owner-only",
+    "access_policy_revision": 1,
+    "saved_archive_content_hash": "sha256:5d17e68290d3f038070e19866f7e676faef21d898818dcba33910e41e7d51b93"
+  },
+  "validation": {
+    "build": "passed",
+    "typecheck": "passed",
+    "share_url": "passed: fixed text and canonical URL only; encoding, path and length assertions",
+    "independent_review": "passed: subtle placement, clear label, no image or editing data in URL, user-activated anchor, focus and touch target",
+    "local_http": "200",
+    "automated_editor_tests": "not rerun: fixed link addition does not change editor behavior",
+    "iphone_real_device": "not tested",
+    "browser_ui_qa": "not performed",
+    "actual_x_posting": "not performed"
+  },
+  "runtime": {
+    "node": ">=22.13.0",
+    "dependency_install": "npm ci",
+    "lockfile": "package-lock.json"
+  },
+  "immutable_release": true,
+  "files": {
+    "source.tar.gz": {
+      "sha256": "78e7a95c74216e1762bc54b9d5b7894bafa8d8238963156cc46642fec8fd7a8e",
+      "bytes": 5693524
+    },
+    "source.bundle": {
+      "sha256": "f56abbfde0f09e94d3d4b4b995219828dfca3744bbdef01211aa6d0bfca909a6",
+      "bytes": 5664085
+    },
+    "deployment.tar.gz": {
+      "sha256": "768e6fb8b51ba457f9e344a4236a7769659d4bcd1db66565dd78914d74033c51",
+      "bytes": 6268793
+    },
+    "CHANGELOG.md": {
+      "sha256": "75291be8b26ee4f090247f649a0a5939264c97f67b3e000d433846199ffac0d8",
+      "bytes": 9043
+    },
+    "RESTORE.md": {
+      "sha256": "8e07f2dfbaa2ea14e5db83fc5958acea041d8db78dba77d58e2aec01028d6b79",
+      "bytes": 2550
+    }
+  }
+}
