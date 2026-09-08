@@ -776,28 +776,62 @@ p {
 .layer-row {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 4px;
   border: 1px solid #e2e3d8;
   border-radius: 12px;
   min-height: 62px;
-  padding: 7px 11px;
+  padding: 5px;
   text-align: left;
 }
-.layer-row > img {
-  width: 62px;
+.layer-row.selected {
+  border-color: #819574;
+  background: #f2f1e6;
+}
+.layer-select {
+  flex: 1;
+  min-width: 0;
+  height: auto;
+  min-height: 54px;
+  justify-content: flex-start;
+  gap: 8px;
+  padding: 4px;
+  text-align: left;
+  white-space: normal;
+}
+.layer-select > img {
+  flex-shrink: 0;
+  width: 48px;
   height: 45px;
   object-fit: contain;
 }
-.layer-row > span:first-of-type {
+.layer-name {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
   font-size: 14px;
-  flex: 1;
+  line-height: 1.4;
 }
-.layer-row > span:last-of-type {
+.layer-position {
   font-size: 12px;
-  color: #727d69;
+  color: #65705e;
 }
-.layer-row:hover {
+.layer-order-actions {
+  display: flex;
+  flex-shrink: 0;
+  gap: 2px;
+}
+.layer-order-button {
+  width: 44px;
+  min-width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: 10px;
+  color: #314a39;
   background: #f2f1e6;
+}
+.layer-order-button[aria-disabled='true'] {
+  opacity: 0.35;
 }
 .stamp-tray {
   position: sticky;

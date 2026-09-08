@@ -16,6 +16,7 @@ export type EditorHistory = {
   present: PlacedStamp[];
   future: PlacedStamp[][];
 };
+export type LayerDirection = 'front' | 'back' | 'forward' | 'backward';
 export const emptyHistory = (): EditorHistory => ({
   past: [],
   present: [],
@@ -61,13 +62,24 @@ export function patch(
 export function reorder(
   stamps: PlacedStamp[],
   id: string,
-  direction: 'front' | 'back',
+  direction: LayerDirection,
 ) {
   const index = stamps.findIndex((s) => s.id === id);
   if (index < 0) return stamps;
+  const target =
+    direction === 'front'
+      ? stamps.length - 1
+      : direction === 'back'
+        ? 0
+        : clamp(
+            index + (direction === 'forward' ? 1 : -1),
+            0,
+            stamps.length - 1,
+          );
+  if (target === index) return stamps;
   const next = [...stamps];
   const [item] = next.splice(index, 1);
-  next.splice(direction === 'front' ? next.length : 0, 0, item);
+  next.splice(target, 0, item);
   return next;
 }
 export function fitImage(

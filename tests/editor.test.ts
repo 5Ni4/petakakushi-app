@@ -55,6 +55,69 @@ test('layer ordering and deletion are reversible', () => {
   assert.equal(undo(h).present.length, 2);
   assert.deepEqual(reorder(h.present, 'missing', 'back'), h.present);
 });
+test('step ordering moves only past the adjacent stamp and preserves the artwork', () => {
+  const two = { ...one, id: 'two', x: 80, rotation: 45 };
+  const three = { ...one, id: 'three', color: '#F5DC51' };
+  const four = { ...one, id: 'four', width: 220 };
+  const original = [one, two, three, four];
+  const forward = reorder(original, 'two', 'forward');
+  assert.deepEqual(forward, [one, three, two, four]);
+  assert.deepEqual(reorder(original, 'two', 'backward'), [
+    two,
+    one,
+    three,
+    four,
+  ]);
+  assert.deepEqual(reorder(original, 'two', 'front'), [one, three, four, two]);
+  assert.deepEqual(reorder(original, 'three', 'back'), [three, one, two, four]);
+  assert.deepEqual(original, [one, two, three, four]);
+  for (const stamp of forward) {
+    assert.equal(
+      stamp,
+      original.find((s) => s.id === stamp.id),
+    );
+  }
+});
+test('layer boundaries and missing stamps are no-ops that keep redo available', () => {
+  const two = { ...one, id: 'two' };
+  const stamps = [one, two];
+  for (const [id, direction] of [
+    ['one', 'backward'],
+    ['one', 'back'],
+    ['two', 'forward'],
+    ['two', 'front'],
+    ['missing', 'forward'],
+  ] as const) {
+    assert.equal(reorder(stamps, id, direction), stamps);
+  }
+  const single = [one];
+  const empty: PlacedStamp[] = [];
+  for (const direction of ['forward', 'backward', 'front', 'back'] as const) {
+    assert.equal(reorder(single, 'one', direction), single);
+    assert.equal(reorder(empty, 'one', direction), empty);
+  }
+  let h = commit(emptyHistory(), stamps);
+  h = commit(h, reorder(h.present, 'one', 'forward'));
+  h = undo(h);
+  const unchanged = commit(h, reorder(h.present, 'two', 'forward'));
+  assert.deepEqual(unchanged, h);
+  assert.deepEqual(redo(unchanged).present, [two, one]);
+});
+test('consecutive step moves undo and redo individually; a new order branches history', () => {
+  const two = { ...one, id: 'two' };
+  const three = { ...one, id: 'three' };
+  let h = commit(emptyHistory(), [one, two, three]);
+  h = commit(h, reorder(h.present, 'one', 'forward'));
+  const first = h;
+  h = commit(h, reorder(h.present, 'one', 'forward'));
+  assert.deepEqual(h.present, [two, three, one]);
+  assert.deepEqual(undo(h).present, first.present);
+  assert.deepEqual(undo(undo(h)).present, [one, two, three]);
+  assert.deepEqual(redo(undo(h)).present, h.present);
+  const branch = commit(undo(h), reorder(first.present, 'three', 'backward'));
+  assert.deepEqual(branch.present, [two, three, one]);
+  assert.equal(branch.future.length, 0);
+});
 test('cancelled gesture preserves undo and redo', () => {
   let h = commit(emptyHistory(), [one]);
   h = commit(h, patch(h.present, 'one', { x: 140 }));

@@ -22,6 +22,8 @@ import {
   Trash2,
   ArrowUpToLine,
   ArrowDownToLine,
+  ArrowUp,
+  ArrowDown,
   Layers,
   RotateCw,
   Share2,
@@ -59,6 +61,7 @@ import {
   resizeStamp,
   type PlacedStamp,
   type EditorHistory,
+  type LayerDirection,
 } from '@/lib/editor-model';
 import {
   getStampBitmap,
@@ -124,6 +127,7 @@ export default function Home() {
     {},
   );
   const [layersOpen, setLayersOpen] = useState(false),
+    [layerMessage, setLayerMessage] = useState(''),
     [canShare, setCanShare] = useState(false);
   const loadVersion = useRef(0),
     generation = useRef(0),
@@ -247,9 +251,17 @@ export default function Home() {
     change([...historyRef.current.present, added]);
     select(added.id);
   }
-  function changeOrder(direction: 'front' | 'back') {
-    const id = selectedRef.current;
-    if (id) change(reorder(historyRef.current.present, id, direction));
+  function changeOrder(direction: LayerDirection, id = selectedRef.current) {
+    if (!id || busyRef.current) return;
+    finishGesture();
+    const before = historyRef.current.present;
+    const next = reorder(before, id, direction);
+    if (next === before) return;
+    change(next);
+    const index = next.findIndex((s) => s.id === id);
+    setLayerMessage(
+      `${specFor(next[index].stamp).name}を手前から${next.length - index}番目に移動しました。`,
+    );
   }
 
   async function choose(file?: File) {
@@ -853,9 +865,12 @@ export default function Home() {
                 variant="ghost"
                 className="icon-button"
                 disabled={!history.present.length || busy || exporting}
-                onClick={() => setLayersOpen(true)}
-                aria-label="重なったスタンプを選ぶ"
-                title="重なったスタンプ"
+                onClick={() => {
+                  setLayerMessage('');
+                  setLayersOpen(true);
+                }}
+                aria-label="スタンプの重なり順を変更"
+                title="重なり順"
               >
                 <Layers />
               </Button>
@@ -1239,7 +1254,7 @@ export default function Home() {
       <Dialog open={layersOpen} onOpenChange={setLayersOpen}>
         <DialogContent className="layers-dialog" showCloseButton={false}>
           <div className="dialog-top">
-            <DialogTitle>重なったスタンプ</DialogTitle>
+            <DialogTitle>スタンプの重なり順</DialogTitle>
             <DialogClose
               render={
                 <Button
@@ -1253,30 +1268,77 @@ export default function Home() {
             </DialogClose>
           </div>
           <DialogDescription>
-            上のものほど手前。タップして選べます。
+            上のものほど手前。↑↓で順番を入れ替えられます。
           </DialogDescription>
           <div className="layers-list">
             {[...history.present].reverse().map((s, i) => (
-              <button
+              <div
                 key={s.id}
-                className="layer-row"
-                onClick={() => {
-                  select(s.id);
-                  setLayersOpen(false);
-                }}
+                className={`layer-row ${selected === s.id ? 'selected' : ''}`}
               >
-                <img
-                  src={
-                    assetImages[stampKey(s)]?.url ?? `/thumbs/${s.stamp}.png`
-                  }
-                  alt=""
-                />
-                <span>{specFor(s.stamp).name}</span>
-                <span>{i === 0 ? 'いちばん前' : ''}</span>
-                {selected === s.id && <Check size={18} />}
-              </button>
+                <Button
+                  variant="ghost"
+                  className="layer-select"
+                  disabled={busy || exporting}
+                  aria-label={`手前から${i + 1}番目の${specFor(s.stamp).name}を選ぶ${selected === s.id ? '（選択中）' : ''}`}
+                  onClick={() => {
+                    select(s.id);
+                    setLayersOpen(false);
+                  }}
+                >
+                  <img
+                    src={
+                      assetImages[stampKey(s)]?.url ?? `/thumbs/${s.stamp}.png`
+                    }
+                    alt=""
+                  />
+                  <span className="layer-name">
+                    <span>{specFor(s.stamp).name}</span>
+                    <span className="layer-position">
+                      {i === 0
+                        ? 'いちばん手前'
+                        : `${i + 1} / ${history.present.length}`}
+                      {selected === s.id && ' · 選択中'}
+                    </span>
+                  </span>
+                </Button>
+                <div className="layer-order-actions">
+                  <Button
+                    variant="ghost"
+                    className="layer-order-button"
+                    disabled={i === 0 || busy || exporting}
+                    focusableWhenDisabled
+                    aria-label={`手前から${i + 1}番目の${specFor(s.stamp).name}をひとつ手前へ`}
+                    title="ひとつ手前へ"
+                    onClick={() => changeOrder('forward', s.id)}
+                  >
+                    <ArrowUp />
+                  </Button>
+                  <Button
+                    variant="ghost"
+                    className="layer-order-button"
+                    disabled={
+                      i === history.present.length - 1 || busy || exporting
+                    }
+                    focusableWhenDisabled
+                    aria-label={`手前から${i + 1}番目の${specFor(s.stamp).name}をひとつ奥へ`}
+                    title="ひとつ奥へ"
+                    onClick={() => changeOrder('backward', s.id)}
+                  >
+                    <ArrowDown />
+                  </Button>
+                </div>
+              </div>
             ))}
           </div>
+          <p
+            className="sr-only"
+            role="status"
+            aria-live="polite"
+            aria-atomic="true"
+          >
+            {layerMessage}
+          </p>
         </DialogContent>
       </Dialog>
     </main>
