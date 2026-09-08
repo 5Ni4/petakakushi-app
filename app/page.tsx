@@ -47,7 +47,7 @@ import {
   DropdownMenuItem,
   DropdownMenuSeparator,
 } from '@/components/ui/dropdown-menu';
-import { STAMPS, PALETTES, type StampId } from '@/lib/stamps';
+import { STAMPS, PALETTES, stampAssetUrl, type StampId } from '@/lib/stamps';
 import {
   clamp,
   commit,
@@ -1182,7 +1182,11 @@ export default function Home() {
                 aria-label={`${s.name}を追加${s.decorative ? '（飾り用）' : ''}`}
                 onClick={() => void addStamp(s.id)}
               >
-                <img src={`/thumbs/${s.id}.png`} alt="" loading="lazy" />
+                <img
+                  src={stampAssetUrl(s.id, 'thumbs')}
+                  alt=""
+                  loading="lazy"
+                />
                 <span>{s.name}</span>
               </button>
             ))}
@@ -1288,7 +1292,8 @@ export default function Home() {
                 >
                   <img
                     src={
-                      assetImages[stampKey(s)]?.url ?? `/thumbs/${s.stamp}.png`
+                      assetImages[stampKey(s)]?.url ??
+                      stampAssetUrl(s.stamp, 'thumbs')
                     }
                     alt=""
                   />

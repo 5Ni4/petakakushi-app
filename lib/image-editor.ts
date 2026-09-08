@@ -1,4 +1,4 @@
-import { createStampSvg, type StampId } from './stamps';
+import { createStampSvg, stampAssetUrl, type StampId } from './stamps';
 import type { PlacedStamp } from './editor-model';
 
 export type StampBitmap = { image: HTMLImageElement; url: string };
@@ -50,7 +50,7 @@ async function renderStamp(
   if (!sourceCache.has(id))
     sourceCache.set(
       id,
-      fetch(`/stamps/${id}.svg`)
+      fetch(stampAssetUrl(id, 'stamps'))
         .then((r) => {
           if (!r.ok) throw new Error('スタンプを読み込めませんでした。');
           return r.text();

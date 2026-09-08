@@ -121,6 +121,14 @@ export const STAMPS = [
   },
 ] as const;
 export type StampId = (typeof STAMPS)[number]['id'];
+const ASSET_REVISIONS: Partial<Record<StampId, string>> = {
+  wave: '1.2.0',
+  'diagonal-lines': '1.2.0',
+};
+export function stampAssetUrl(id: StampId, kind: 'stamps' | 'thumbs') {
+  const revision = ASSET_REVISIONS[id];
+  return `/${kind}/${id}.${kind === 'stamps' ? 'svg' : 'png'}${revision ? `?v=${revision}` : ''}`;
+}
 export function createStampSvg(
   source: string,
   id: StampId,
