@@ -1,0 +1,60 @@
+{
+  "product": "ぺたかくし",
+  "display_version": "ver1.6",
+  "version": "1.6.0",
+  "git_tag": "v1.6.0",
+  "source_commit": "f4ca13495e4b9bf4302b8116717094130fcdc884",
+  "package_manifest_version": "1.6.0",
+  "recorded_at_utc": "2026-09-08T07:52:51.578Z",
+  "site": {
+    "project_id": "appgprj_6a9f868ff5c08191b89670c11f8895e9",
+    "saved_version_number": 9,
+    "saved_version_id": "appgprj_6a9f868ff5c08191b89670c11f8895e9~appgver_c7a4cc396a44819190675d541f379f14",
+    "deployment_id": "appgdep_6a9fbe8a4184819192cb63654dbe93b6",
+    "deployment_status": "succeeded",
+    "url": "https://petakakushi-524.r5ni4.chatgpt.site",
+    "access": "owner-only",
+    "access_policy_revision": 1,
+    "saved_archive_content_hash": "sha256:2baef6bc544ec4a50a6bcfbcfe69540df5fce7f0d46e0693f6be60f5b3632b91"
+  },
+  "validation": {
+    "build": "passed",
+    "typecheck": "passed",
+    "social_links": "passed: exact user-provided author URL https://x.com/R5ni4; fixed introduction text and canonical site URL only",
+    "independent_review": "passed after aligning visible labels with accessible names; responsive wrapping, focus and 44px touch targets reviewed in code",
+    "local_http": "200",
+    "deployment_archive": "validated: runtime, social controls and 224 palette previews included",
+    "automated_editor_tests": "not rerun: static links do not change editor behavior",
+    "iphone_real_device": "not tested",
+    "browser_ui_qa": "not performed",
+    "actual_x_posting_and_profile_visit": "not performed"
+  },
+  "runtime": {
+    "node": ">=22.13.0",
+    "dependency_install": "npm ci",
+    "lockfile": "package-lock.json"
+  },
+  "immutable_release": true,
+  "files": {
+    "source.tar.gz": {
+      "sha256": "1b26ceb2ae8582625eafcca0c225ca71c5ef62a76e2ace57d873f092d25c675e",
+      "bytes": 5694739
+    },
+    "source.bundle": {
+      "sha256": "4c895ad5478c5d3a6a7744cb2803d9de8d40a56887f2c8fc104d8659ea7eba4a",
+      "bytes": 5677498
+    },
+    "deployment.tar.gz": {
+      "sha256": "c83a561636fd2e22428103fb7ed5e6daaac153664ebe830ce7804f7a71e1415c",
+      "bytes": 6268668
+    },
+    "CHANGELOG.md": {
+      "sha256": "bcb7d27455250a3a994a10524d08ab55c64298208b93b917cef115c57fb12622",
+      "bytes": 10484
+    },
+    "RESTORE.md": {
+      "sha256": "30f83fc2d272d47a51b06669cd81453805ecd487205a0d5f7e8ce7917f0f0e67",
+      "bytes": 2644
+    }
+  }
+}
