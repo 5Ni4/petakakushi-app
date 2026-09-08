@@ -820,6 +820,33 @@ p {
   color: #65705e;
   line-height: 1.8;
 }
+.export-intro {
+  border-top: 1px solid #e7e8de;
+  padding-top: 4px;
+  text-align: center;
+}
+.x-intro-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  min-height: 44px;
+  padding: 4px 8px;
+  border-radius: 8px;
+  color: #65705e;
+  font-size: 14px;
+  text-decoration: underline;
+  text-decoration-color: #bcc6b4;
+  text-underline-offset: 4px;
+}
+.x-intro-link:hover {
+  color: #314a39;
+  text-decoration-color: currentColor;
+}
+.x-intro-link:focus-visible {
+  outline: 2px solid #3f604d;
+  outline-offset: 2px;
+}
 .layers-dialog {
   width: min(430px, calc(100vw - 28px));
   max-width: 430px !important;

@@ -24,6 +24,7 @@ import {
   ArrowDownToLine,
   ArrowUp,
   ArrowDown,
+  ArrowUpRight,
   Layers,
   RotateCw,
   Share2,
@@ -74,6 +75,7 @@ import {
   type StampBitmap,
 } from '@/lib/image-editor';
 import { registerEditorTools } from '@/lib/webmcp';
+import { X_SHARE_URL } from '@/lib/share';
 
 type Photo = {
   url: string;
@@ -1207,6 +1209,18 @@ export default function Home() {
               <p className="export-help">
                 iPhoneは「共有・保存」から「画像を保存」。表示されないときは、上の画像を長押しして保存できます。
               </p>
+              <div className="export-intro">
+                <a
+                  className="x-intro-link"
+                  href={X_SHARE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="ぺたかくしをXで紹介（別タブで開く）"
+                >
+                  ぺたかくしをXで紹介
+                  <ArrowUpRight size={15} aria-hidden="true" />
+                </a>
+              </div>
             </>
           )}
         </DialogContent>
