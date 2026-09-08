@@ -21,16 +21,16 @@ const categories = [
     ),
   },
   {
+    id: 'arrows',
+    name: '矢印',
+    stamps: STAMPS.filter((s) => s.id.endsWith('-arrow')),
+  },
+  {
     id: 'illustrations',
     name: 'イラスト',
     stamps: STAMPS.filter(
       (s) => !s.decorative && s.id !== 'crayon-band' && s.id !== 'oval',
     ),
-  },
-  {
-    id: 'arrows',
-    name: '矢印',
-    stamps: STAMPS.filter((s) => s.id.endsWith('-arrow')),
   },
 ];
 const paletteItems = PALETTES.map((p, value) => ({ value, label: p.name }));
