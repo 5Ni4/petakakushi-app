@@ -20,14 +20,21 @@
 
 後続版の対応表は `releases/v<版番号>.json` に保存する。
 
-現在の外部公開版ver1.6.1は次のとおり。
+現在の外部公開版ver1.6.2は次のとおり。
+
+- Gitタグ: `v1.6.2`
+- 公開ソース: `1838fdf32998b984c61e052cf999997d909e18d2`
+- Cloudflare Worker: `petakakushi-app`
+- URL: https://petakakushi-app.r524.workers.dev
+- Cloudflare Version ID: `289337c8-50a1-48a4-9601-4378d572c1ab`
+- Sites版ver1.6（保存版9）は変更せず保持
+- 詳細: [ver1.6.2の記録](releases/v1.6.2.json)
+
+### 外部公開版ver1.6.1
 
 - Gitタグ: `v1.6.1`
 - 公開ソース: `405baf773db9e7ff349ded9ca5af4d3564a0d21b`
-- Cloudflare Worker: `petakakushi-app`
-- URL: https://petakakushi-app.r524.workers.dev
 - Cloudflare Version ID: `12d68391-4a91-4d1c-82fa-dfcc0e0041b3`
-- Sites版ver1.6（保存版9）は変更せず保持
 - 詳細: [ver1.6.1の記録](releases/v1.6.1.json)
 
 ### Sites版ver1.6

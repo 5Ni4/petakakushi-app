@@ -1,0 +1,39 @@
+{
+  "product": "ぺたかくし",
+  "display_version": "ver1.6.2",
+  "version": "1.6.2",
+  "git_tag": "v1.6.2",
+  "source_commit": "1838fdf32998b984c61e052cf999997d909e18d2",
+  "recorded_at_utc": "2026-09-17T07:42:19Z",
+  "change": {
+    "popup_introduction_link": "枠と背景のない控えめなテキストリンク表示に変更",
+    "normal_screen_introduction_link": "維持",
+    "x_share_text_and_url": "維持"
+  },
+  "hosting": {
+    "provider": "Cloudflare Workers",
+    "worker_name": "petakakushi-app",
+    "version_id": "289337c8-50a1-48a4-9601-4378d572c1ab",
+    "url": "https://petakakushi-app.r524.workers.dev",
+    "deployment_status": "succeeded"
+  },
+  "github": {
+    "repository": "https://github.com/5Ni4/petakakushi-app",
+    "branch": "main"
+  },
+  "sites": {
+    "project_id": "appgprj_6a9f868ff5c08191b89670c11f8895e9",
+    "saved_version_number": 9,
+    "url": "https://petakakushi-524.r5ni4.chatgpt.site",
+    "preserved": true
+  },
+  "validation": {
+    "build": "passed",
+    "typecheck": "passed",
+    "automated_editor_tests": "passed: 10",
+    "format_check": "passed",
+    "deployed_http": "200",
+    "favicon_http": "200",
+    "popup_link_class": "passed: x-intro-link served in page bundle"
+  }
+}
