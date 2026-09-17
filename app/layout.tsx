@@ -5,7 +5,11 @@ export const metadata: Metadata = {
   title: 'ぺたかくし — クレヨンのスクショスタンプ',
   description:
     'スクショの隠したいところに、クレヨン風のスタンプをぺたり。画像を端末内だけで加工して保存できます。',
-  icons: { icon: '/favicon.png', apple: '/favicon.png' },
+  icons: {
+    icon: '/favicon-r524.png',
+    shortcut: '/favicon-r524.png',
+    apple: '/favicon-r524.png',
+  },
 };
 
 export default function RootLayout({

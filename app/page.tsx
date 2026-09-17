@@ -809,7 +809,7 @@ export default function Home() {
         <div className="wordmark">
           <img src="/thumbs/524-silhouette.png" alt="" />
           <h1>ぺたかくし</h1>
-          <span className="tiny-label">by 524</span>
+          <span className="tiny-label">by R-524</span>
         </div>
         <div className="header-actions">
           <Button
