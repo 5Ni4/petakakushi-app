@@ -1,0 +1,34 @@
+{
+  "product": "ぺたかくし",
+  "display_version": "ver1.6.1",
+  "version": "1.6.1",
+  "git_tag": "v1.6.1",
+  "source_commit": "405baf773db9e7ff349ded9ca5af4d3564a0d21b",
+  "recorded_at_utc": "2026-09-17T03:36:33Z",
+  "hosting": {
+    "provider": "Cloudflare Workers",
+    "worker_name": "petakakushi-app",
+    "version_id": "12d68391-4a91-4d1c-82fa-dfcc0e0041b3",
+    "url": "https://petakakushi-app.r524.workers.dev",
+    "deployment_status": "succeeded"
+  },
+  "github": {
+    "repository": "https://github.com/5Ni4/petakakushi-app",
+    "branch": "main"
+  },
+  "sites": {
+    "project_id": "appgprj_6a9f868ff5c08191b89670c11f8895e9",
+    "saved_version_number": 9,
+    "url": "https://petakakushi-524.r5ni4.chatgpt.site",
+    "preserved": true
+  },
+  "validation": {
+    "build": "passed",
+    "typecheck": "passed",
+    "automated_editor_tests": "passed: 10",
+    "deployed_http": "200",
+    "favicon_http": "200",
+    "branding": "passed: by R-524",
+    "x_share_text": "passed: #ぺたかくし and Cloudflare URL included"
+  }
+}
