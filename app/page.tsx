@@ -1221,9 +1221,6 @@ export default function Home() {
               <p className="export-help">
                 iPhoneは「共有・保存」から「画像を保存」。表示されないときは、上の画像を長押しして保存できます。
               </p>
-              <div className="export-intro">
-                <XIntroButton subtle />
-              </div>
             </>
           )}
         </DialogContent>

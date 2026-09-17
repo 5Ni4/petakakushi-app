@@ -2,17 +2,13 @@ import { ArrowUpRight } from 'lucide-react';
 import { buttonVariants } from '@/components/ui/button';
 import { X_SHARE_URL } from '@/lib/share';
 
-export function XIntroButton({ subtle = false }: { subtle?: boolean }) {
+export function XIntroButton() {
   return (
     <a
-      className={
-        subtle
-          ? 'x-intro-link'
-          : buttonVariants({
-              variant: 'outline',
-              className: 'x-intro-button',
-            })
-      }
+      className={buttonVariants({
+        variant: 'outline',
+        className: 'x-intro-button',
+      })}
       href={X_SHARE_URL}
       target="_blank"
       rel="noopener noreferrer"
