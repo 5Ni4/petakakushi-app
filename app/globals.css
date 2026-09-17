@@ -852,6 +852,28 @@ p {
   outline: 2px solid #3f604d;
   outline-offset: 2px;
 }
+.x-intro-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  min-height: 44px;
+  max-width: 100%;
+  padding: 8px 2px;
+  border-radius: 4px;
+  color: #65705e;
+  font-size: 14px;
+  line-height: 1.5;
+  white-space: normal;
+  text-align: center;
+  text-decoration: underline;
+  text-decoration-color: #bcc6b4;
+  text-underline-offset: 4px;
+}
+.x-intro-link:hover {
+  color: #314a39;
+  text-decoration-color: currentColor;
+}
 .author-x-link {
   display: inline-flex;
   align-items: center;
