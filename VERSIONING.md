@@ -23,7 +23,7 @@
 現在の外部公開版ver1.7.0は次のとおり。
 
 - Gitタグ: `v1.7.0`
-- 公開ソース: Gitタグ `v1.7.0` が指すコミット
+- 公開ソース: `2a94e83f8c4618992a454e36d00dcfd35f57c667`
 - Cloudflare Worker: `petakakushi-app`
 - URL: https://petakakushi-app.r524.workers.dev
 - Cloudflare Version ID: `4e814681-d5a8-4eb5-830d-7f3b72ab4f9f`

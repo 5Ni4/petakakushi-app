@@ -1,0 +1,74 @@
+{
+  "product": "ぺたかくし",
+  "display_version": "ver1.7",
+  "version": "1.7.0",
+  "git_tag": "v1.7.0",
+  "source_commit": "2a94e83f8c4618992a454e36d00dcfd35f57c667",
+  "package_manifest_version": "1.7.0",
+  "recorded_at_utc": "2026-09-29T17:28:15Z",
+  "change": {
+    "ogp_image": "/ogp.png",
+    "ogp_dimensions": "1200x630",
+    "open_graph_metadata": "added",
+    "twitter_card": "summary_large_image"
+  },
+  "hosting": {
+    "provider": "Cloudflare Workers",
+    "worker_name": "petakakushi-app",
+    "version_id": "4e814681-d5a8-4eb5-830d-7f3b72ab4f9f",
+    "url": "https://petakakushi-app.r524.workers.dev",
+    "deployment_status": "succeeded"
+  },
+  "github": {
+    "repository": "https://github.com/5Ni4/petakakushi-app",
+    "branch": "main",
+    "release_branch": "work/v1.7.0"
+  },
+  "sites": {
+    "project_id": "appgprj_6a9f868ff5c08191b89670c11f8895e9",
+    "saved_version_number": 9,
+    "url": "https://petakakushi-524.r5ni4.chatgpt.site",
+    "preserved": true
+  },
+  "validation": {
+    "build": "passed: npm run build",
+    "deployed_http": "200",
+    "open_graph_metadata": "passed: title, description, URL, image, dimensions and alt present",
+    "twitter_card": "passed: summary_large_image and image present",
+    "ogp_image_http": "200: image/png",
+    "ogp_image_dimensions": "1200x630",
+    "social_client_rendering": "not manually tested"
+  },
+  "runtime": {
+    "node": ">=22.13.0",
+    "dependency_install": "npm ci",
+    "lockfile": "package-lock.json"
+  },
+  "immutable_release": true,
+  "files": {
+    "source.tar.gz": {
+      "sha256": "b1febe91dd9ba6898d14c0a81f37910ac860d8388dbe4d894375d770e4d2ac90",
+      "bytes": 6895016
+    },
+    "source.bundle": {
+      "sha256": "1753b7a5fdbff5f9b8c7394a0f9ac6385c5ad92ad99aa042b5621f02a8f5e85c",
+      "bytes": 7272811
+    },
+    "deployment.tar.gz": {
+      "sha256": "54b4d582562a69ea95294c7131325b1932b82cd4f28a8e9ff5450babe731c779",
+      "bytes": 7334211
+    },
+    "CHANGELOG.md": {
+      "sha256": "c97d5dc6150f46467a34d71870fc1d573beb0e0d82f43d3e66a1c4eae18296ed",
+      "bytes": 12852
+    },
+    "RESTORE.md": {
+      "sha256": "001027f92aed2e8d388054912233d1678c4ba79d4cb826fd366edf651a88ca18",
+      "bytes": 1094
+    },
+    "ogp.png": {
+      "sha256": "9e78fedf55028a6bce486cbd2fbdf8fd47b8b61813496447c9f052b6f4e6532e",
+      "bytes": 1197144
+    }
+  }
+}
