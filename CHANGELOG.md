@@ -1,5 +1,21 @@
 # 変更履歴
 
+## ver1.7 / 1.7.0 — 2026-09-30
+
+### 変更点
+
+- 採用された2案を、OGP画像 `public/ogp.png`（1200×630）として追加。
+- Open Graph と X の large image card メタデータを追加。
+
+### 確認済み
+
+- `npm run build` が成功。
+- Cloudflare Worker への公開が成功。公開HTMLのOGP・Xカード情報と、OGP画像のHTTP 200を確認。
+
+### 残る制約
+
+- XやLINEなど、各SNSアプリ内でのカード表示は未確認。
+
 ## ver1.6.3 / 1.6.3 — 2026-09-17
 
 ### 変更点
